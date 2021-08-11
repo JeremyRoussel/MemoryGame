@@ -42,26 +42,7 @@ struct ContentView: View {
         .padding(.horizontal)
         .foregroundColor(/*@START_MENU_TOKEN@*/.red/*@END_MENU_TOKEN@*/)
     }
-    
-    var add: some View {
-        Button(action: {
-            if (emojiCount < emojis.count) {
-                emojiCount += 1
-            }
-        }, label: {
-            Image(systemName: "plus.circle")
-        })
-    }
-    var minus: some View {
-        Button(action: {
-            if (emojiCount > 1) {
-                emojiCount -= 1
-            }
-        }, label: {
-            Image(systemName: "minus.circle")
-        })
-    }
-    
+        
     var carButton: some View {
         Button(action: {
             emojis = cars

@@ -5,7 +5,6 @@
 //  Created by Jeremy Roussel on 8/9/21.
 //
 
-import Foundation
 import SwiftUI
 
 struct CardView: View {
