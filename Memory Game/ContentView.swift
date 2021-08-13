@@ -11,20 +11,10 @@ struct ContentView: View {
     
     @ObservedObject var viewModel: EmojiMemoryGame
     
-//    var cars: [String] = ["🚗", "🚜", "🚝", "🛩", "🛸", "🚁", "🚢", "🛶", "🚙", "🚌", "🛴", "🚲", "🚃"]
-//
-//    var flags: [String] = ["🇦🇫", "🇦🇩", "🇦🇴", "🇦🇿", "🇧🇸", "🇧🇧", "🇧🇷", "🇨🇦", "🇬🇵", "🇮🇪"]
-//
-//    var faces: [String] = ["😃", "😅", "😂", "🥲", "☺️", "🙃", "😉", "😋"]
-//
-//    @State var emojis: Array<String> = ["🚗", "🚜", "🚝", "🛩", "🛸", "🚁", "🚢", "🛶", "🚙", "🚌", "🛴", "🚲", "🚃"]
-//    // type can be inferred, or use [String] instead
-//    @State var emojiCount: Int = 13
-    
     var body: some View {
         
         VStack {
-            Text("Memorize!").font(.largeTitle)
+            Text(viewModel.themeName).font(.largeTitle)
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 70))]) {
                     ForEach(viewModel.cards) { card in
@@ -36,9 +26,15 @@ struct ContentView: View {
                     }
                 }
             }
+            .padding(.horizontal)
+            .foregroundColor(viewModel.themeColor)
+            
+            Button {
+                viewModel.newGame()
+            } label: {
+                Text("New Game")
+            }
         }
-        .padding(.horizontal)
-        .foregroundColor(/*@START_MENU_TOKEN@*/.red/*@END_MENU_TOKEN@*/)
     }
 }
 
