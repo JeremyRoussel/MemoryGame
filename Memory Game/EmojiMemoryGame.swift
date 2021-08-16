@@ -10,7 +10,6 @@
 import SwiftUI
 
 class EmojiMemoryGame: ObservableObject {
-//    static private let cars: [String] = ["🚗", "🚜", "🚝", "🛩", "🛸", "🚁", "🚢", "🛶", "🚙", "🚌", "🛴", "🚲", "🚃"]
     
     init() {
         theme = EmojiMemoryGame.themes.randomElement()!
@@ -53,20 +52,19 @@ class EmojiMemoryGame: ObservableObject {
     
     var themeColor: Color {
         switch theme.color {
-        case "red":
-            return .red
-        case "blue":
-            return .blue
-        case "green":
-            return .green
-        
-        default:
-            return .red
+            case "red":
+                return .red
+            case "blue":
+                return .blue
+            case "green":
+                return .green
+            default:
+                return .red
         }
     }
     
     var cards: Array<MemoryGame<String>.Card> {
-        return gameModel.cards.shuffled()
+        return gameModel.cards
     }
     
     //MARK: - Intent()

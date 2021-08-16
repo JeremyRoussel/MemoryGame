@@ -29,6 +29,10 @@ struct ContentView: View {
             .padding(.horizontal)
             .foregroundColor(viewModel.themeColor)
             
+            Text("Game Score:")
+            Text("\(viewModel.gameModel.score)")
+                .padding(.bottom)
+            
             Button {
                 viewModel.newGame()
             } label: {

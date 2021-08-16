@@ -11,11 +11,8 @@ import Foundation
 
 struct Theme {
     var name: String
-    
     var content: Array<String>
-    
     var numPairs: Int
-    
     var color: String
     
     init(name: String, content: Array<String>, numPairs: Int, color: String) {
